@@ -171,14 +171,13 @@ const WEDDING_DATA = {
   // RSVP Modal & Contact Settings
   rsvp: {
     enabled: true,
-    contactNumber: "+91 9537934186",
-    whatsappNumber: "919537934186",
+    contactNumber: "+91 8301971036",
+    whatsappNumber: "918301971036",
     joiningInvitation: "Ajay John Abraham",
     tagline: "Your presence is the best present",
     closingTitle: "Joining the Invitation",
     closingCouple: "Ajay John Abraham",
-    footerSignature: "An Inviata Experience",
-    instagramUrl: "https://instagram.com/inviata.in"
+    footerSignature: "An AJ Group Experience",
   }
 };
 

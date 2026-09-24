@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Dr. Akash & Dr. Dana | Wedding Invitation</title>
+  
+  <!-- SEO & Meta -->
+  <meta name="description" content="We cordially invite you to join us to grace the betrothal and wedding ceremony of Dr. Dana Susan Abraham & Dr. Akash Daniel Georgi!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Dr. Akash Daniel Georgi & Dr. Dana Susan Abraham - Wedding Invitation" />
+  <meta property="og:description" content="Tap the golden cross seal to unroll our wedding scroll" />
+  <meta property="og:image" content="./assets/proposal-hero.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body class="locked">
+
+  <!-- Floating Heavenly Canvas -->
+  <canvas id="diyaCanvas"></canvas>
+
+  <!-- Confetti FX -->
+  <div class="confetti" id="confetti"></div>
+
+  <!-- Side Pagination Dots -->
+  <div class="side-pagination-dots" id="sidePaginationDots"></div>
+
+  <!-- Mobile Shell Container -->
+  <main class="mobile-shell">
+
+    <!-- 1. LANDING SCREEN & 3D ROYAL SILK SCROLL (PATRIKA) -->
+    <section class="landing" id="landing">
+      <div class="landing-header">
+        <div class="monogram" id="landingMonogram">A ✝ D</div>
+        <div class="sub-header">Marriage Invitation</div>
+      </div>
+
+      <div class="royal-scroll-wrap">
+        <div class="royal-scroll-container">
+          <div class="scroll-wooden-handle" id="scrollTopHandle"></div>
+          <div class="scroll-parchment-body" id="scrollParchment">
+            <div class="scroll-inner-border">
+              <span style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:700; color:#b58d24;">Dr. Akash & Dr. Dana</span>
+              <span style="font-size:0.82rem; letter-spacing:0.18em; color:#685012; margin-top:6px; font-weight:700;">CORDIALLY INVITE YOU TO CELEBRATE</span>
+            </div>
+          </div>
+          <div class="scroll-wooden-handle" id="scrollBottomHandle"></div>
+          <button class="ribbon-seal-btn" id="ribbonSealBtn" aria-label="Unroll invitation scroll">✝</button>
+        </div>
+      </div>
+
+      <div class="footer-copy">
+        <div class="script" id="landingScript" style="text-align: center;">Marriage Invitation</div>
+        <div class="sub" id="landingSub">Tap the golden cross seal to unroll the scroll</div>
+      </div>
+    </section>
+
+    <!-- 2. FULL-PAGE SNAP SCROLL STORYBOOK WRAPPER -->
+    <div class="storybook-wrapper" id="invitationStorybook">
+
+      <!-- SLIDE 1: ROYAL DYNAMIC PROPOSAL HERO -->
+      <section class="story-section hero-slide">
+        <div class="hero-img-wrap">
+          <img src="./assets/proposal-hero.png" alt="Dr. Akash & Dr. Dana Proposal Silhouette Visual" decoding="async" />
+          <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+          <h1 class="hero-couples-names" id="heroCouplesNames">Dr. Akash & Dr. Dana</h1>
+          <p class="hero-tagline" id="heroTagline">We cordially invite you to join us in celebrating our union</p>
+        </div>
+        <div class="scroll-cue">
+          <span>Scroll Story</span>
+          <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+        </div>
+      </section>
+
+      <!-- SLIDE 2: SACRED BIBLICAL MARRIAGE VERSE (From Invitation Card) -->
+      <section class="story-section bible-slide">
+        <div class="bible-card" data-tilt>
+          <div class="bible-icon">✝️</div>
+          <p class="bible-verse-text" id="bibleVerseText">“So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand.”</p>
+          <p class="bible-verse-ref" id="bibleVerseRef">Isaiah 41:10</p>
+        </div>
+        <div class="scroll-cue">
+          <span>Our Kudumbam</span>
+          <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+        </div>
+      </section>
+
+      <!-- SLIDE 3: TWO FAMILIES LINEAGE SHOWCASE (KUDUMBAM & PARISH) -->
+      <section class="story-section lineage-slide">
+        <h2 class="section-title" id="lineageTitle">TWO FAMILIES, ONE SACRED UNION</h2>
+        <div class="section-subtitle" id="lineageSubtitle">With the love and blessings of our parents & family</div>
+        
+        <div class="lineage-grid">
+          <div id="groomSideContainer"></div>
+          <div id="brideSideContainer"></div>
+        </div>
+
+        <div class="scroll-cue">
+          <span>Journey</span>
+          <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: ARRANGED MARRIAGE JOURNEY TIMELINE -->
+      <section class="story-section timeline-slide">
+        <h2 class="section-title">The Sacred Journey</h2>
+        <div class="timeline-wrap" id="storyContainer">
+          <!-- Dynamically populated from wedding-data.js -->
+        </div>
+        <div class="scroll-cue">
+          <span>Traditions</span>
+          <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: MALANKARA CATHOLIC TRADITIONS GUIDE -->
+      <section class="story-section traditions-slide">
+        <h2 class="section-title">Sacred Traditions Guide</h2>
+        <div id="traditionsContainer">
+          <!-- Dynamically populated from wedding-data.js -->
+        </div>
+        <div class="scroll-cue">
+          <span>Marriage Date</span>
+          <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: SCRATCH BRASS PLATE DATE REVEAL & LIVE COUNTDOWN -->
+      <section class="story-section scratch-slide">
+        <div class="scratch-area">
+          <div class="scratch-heading" id="scratchHeading">Scratch brass plate to reveal Marriage date</div>
+          
+          <div class="scratch-card" id="scratchCard">
+            <div class="scratch-underlay">
+              <div class="save">Holy Marriage</div>
+              <div class="date" id="scratchDisplayDate">26 December 2026</div>
+            </div>
+            <div class="scratch-overlay" id="scratchOverlay">
+              <canvas id="scratchCanvas"></canvas>
+            </div>
+          </div>
+
+          <div class="countdown-wrap" id="countdownWrap">
+            <div class="countdown-title" id="countdownTitle">Countdown to Holy Marriage</div>
+            <div class="countdown" id="countdown"></div>
+          </div>
+        </div>
+        <div class="scroll-cue">
+          <span>Events</span>
+          <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: EVENTS SCHEDULE -->
+      <section class="story-section events-slide">
+        <h2 class="section-title">Auspicious Events</h2>
+        <div class="cards" id="eventsContainer">
+          <!-- Dynamically populated from wedding-data.js -->
+        </div>
+        <div class="scroll-cue">
+          <span>Venues</span>
+          <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+        </div>
+      </section>
+
+      <!-- SLIDE 8: VENUES & MAPS -->
+      <section class="story-section venue-slide">
+        <h2 class="section-title" style="margin-top:20px;">Celebration Venues</h2>
+        <div id="venuesContainer">
+          <!-- Dynamically populated from wedding-data.js -->
+        </div>
+        <div class="scroll-cue">
+          <span>RSVP</span>
+          <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+        </div>
+      </section>
+
+      <!-- SLIDE 9: CLOSING FAMILY REVERENCE & RSVP -->
+      <section class="story-section closing-slide">
+        <div class="closing">
+          <div class="line1" id="closingLine1">Joining the Invitation</div>
+          <div class="line2" id="closingLine2">Ajay John Abraham</div>
+          <p style="font-size:1.15rem; margin-bottom:24px; color:var(--color-gold-dark); font-style:italic; font-weight:600;">“Your presence is the best present”</p>
+
+          <button class="btn-rsvp" id="btnRsvpTrigger">
+            ✉️ Send RSVP & Blessings
+          </button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Interactive RSVP Modal -->
+  <div class="rsvp-modal" id="rsvpModal" role="dialog" aria-modal="true" aria-labelledby="rsvpTitle">
+    <div class="rsvp-content">
+      <button class="rsvp-close" id="rsvpClose" aria-label="Close RSVP modal">&times;</button>
+      <div style="text-align:center; margin-bottom:16px;">
+        <h3 id="rsvpTitle" style="font-family:'Great Vibes',cursive; font-size:2.8rem; color:var(--color-gold-dark);">Send Your RSVP</h3>
+        <p style="font-size:1rem; color:var(--color-text-muted);">We seek your warm presence and sacred blessings!</p>
+      </div>
+      <form id="rsvpForm">
+        <div class="form-group">
+          <label for="guestName">Your Full Name / Family Name *</label>
+          <input type="text" id="guestName" required placeholder="e.g. Rahul & Family" />
+        </div>
+        <div class="form-group">
+          <label for="attendanceStatus">Will you join us?</label>
+          <select id="attendanceStatus">
+            <option value="Joyfully Accepts">Joyfully Accepts (Will Attend)</option>
+            <option value="Regretfully Declines">Regretfully Declines</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="guestCount">Number of Guests</label>
+          <select id="guestCount">
+            <option value="1">1 Person</option>
+            <option value="2">2 Persons</option>
+            <option value="3">3 Persons</option>
+            <option value="4+">4+ Persons (Family)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="guestWishes">Blessings for the Newlyweds & Families</label>
+          <textarea id="guestWishes" rows="3" placeholder="Write your heartfelt blessing..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit-rsvp">Send Confirmation</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Vinyl Record Floating Audio Widget -->
+  <div class="audio-vinyl-widget" id="audioWidget" title="Toggle Music">
+    <div class="vinyl-disc">
+      <div class="vinyl-center"></div>
+    </div>
+    <div class="eq-spectrum">
+      <span class="eq-bar"></span>
+      <span class="eq-bar"></span>
+      <span class="eq-bar"></span>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./wedding-data.js"></script>
+  <script src="./js/scroll-unroll.js"></script>
+  <script src="./js/diya-canvas.js"></script>
+  <script src="./js/tilt-effect.js"></script>
+  <script src="./js/scratch-card.js"></script>
+  <script src="./js/countdown.js"></script>
+  <script src="./js/audio-player.js"></script>
+  <script src="./js/rsvp-modal.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>

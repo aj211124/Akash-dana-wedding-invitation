@@ -38,7 +38,7 @@
     <!-- 1. LANDING SCREEN & 3D ROYAL SILK SCROLL (PATRIKA) -->
     <section class="landing" id="landing">
       <div class="landing-header">
-        <div class="monogram" id="landingMonogram">A ✝ D</div>
+        <div class="monogram" id="landingMonogram">A &amp; D</div>
         <div class="sub-header">Marriage Invitation</div>
       </div>
 
@@ -46,9 +46,13 @@
         <div class="royal-scroll-container">
           <div class="scroll-wooden-handle" id="scrollTopHandle"></div>
           <div class="scroll-parchment-body" id="scrollParchment">
-            <div class="scroll-inner-border">
-              <span style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:700; color:#b58d24;">Dr. Akash & Dr. Dana</span>
-              <span style="font-size:0.82rem; letter-spacing:0.18em; color:#685012; margin-top:6px; font-weight:700;">CORDIALLY INVITE YOU TO CELEBRATE</span>
+            <div class="scroll-inner-border" id="scrollInnerBorder">
+              <div class="seal-couples-names" id="sealCouplesNames">
+                <span class="seal-groom-name">Dr. Akash Daniel Georgi</span>
+                <span class="seal-name-amp">&amp;</span>
+                <span class="seal-bride-name">Dr. Dana Susan Abraham</span>
+              </div>
+              <span class="seal-invite-text">CORDIALLY INVITE YOU TO CELEBRATE</span>
             </div>
           </div>
           <div class="scroll-wooden-handle" id="scrollBottomHandle"></div>
@@ -105,27 +109,15 @@
         </div>
 
         <div class="scroll-cue">
-          <span>Journey</span>
+          <span>The Sacred Journey</span>
           <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
         </div>
       </section>
 
-      <!-- SLIDE 4: ARRANGED MARRIAGE JOURNEY TIMELINE -->
+      <!-- SLIDE 4: ARRANGED MARRIAGE JOURNEY TIMELINE (WITH INTEGRATED EVENTS) -->
       <section class="story-section timeline-slide">
         <h2 class="section-title">The Sacred Journey</h2>
         <div class="timeline-wrap" id="storyContainer">
-          <!-- Dynamically populated from wedding-data.js -->
-        </div>
-        <div class="scroll-cue">
-          <span>Traditions</span>
-          <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
-        </div>
-      </section>
-
-      <!-- SLIDE 5: MALANKARA CATHOLIC TRADITIONS GUIDE -->
-      <section class="story-section traditions-slide">
-        <h2 class="section-title">Sacred Traditions Guide</h2>
-        <div id="traditionsContainer">
           <!-- Dynamically populated from wedding-data.js -->
         </div>
         <div class="scroll-cue">
@@ -134,7 +126,7 @@
         </div>
       </section>
 
-      <!-- SLIDE 6: SCRATCH BRASS PLATE DATE REVEAL & LIVE COUNTDOWN -->
+      <!-- SLIDE 5: SCRATCH BRASS PLATE DATE REVEAL & LIVE COUNTDOWN -->
       <section class="story-section scratch-slide">
         <div class="scratch-area">
           <div class="scratch-heading" id="scratchHeading">Scratch brass plate to reveal Marriage date</div>
@@ -155,18 +147,6 @@
           </div>
         </div>
         <div class="scroll-cue">
-          <span>Events</span>
-          <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
-        </div>
-      </section>
-
-      <!-- SLIDE 7: EVENTS SCHEDULE -->
-      <section class="story-section events-slide">
-        <h2 class="section-title">Auspicious Events</h2>
-        <div class="cards" id="eventsContainer">
-          <!-- Dynamically populated from wedding-data.js -->
-        </div>
-        <div class="scroll-cue">
           <span>Venues</span>
           <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
         </div>
@@ -179,64 +159,22 @@
           <!-- Dynamically populated from wedding-data.js -->
         </div>
         <div class="scroll-cue">
-          <span>RSVP</span>
+          <span>Blessings</span>
           <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
         </div>
       </section>
 
-      <!-- SLIDE 9: CLOSING FAMILY REVERENCE & RSVP -->
+      <!-- SLIDE 6: CLOSING FAMILY REVERENCE -->
       <section class="story-section closing-slide">
         <div class="closing">
           <div class="line1" id="closingLine1">Joining the Invitation</div>
           <div class="line2" id="closingLine2">Ajay John Abraham</div>
-          <p style="font-size:1.15rem; margin-bottom:24px; color:var(--color-gold-dark); font-style:italic; font-weight:600;">“Your presence is the best present”</p>
-
-          <button class="btn-rsvp" id="btnRsvpTrigger">
-            ✉️ Send RSVP & Blessings
-          </button>
+          <p style="font-size:1.15rem; color:var(--color-gold-dark); font-style:italic; font-weight:600; margin-top:10px;">“Your presence is the best present”</p>
         </div>
       </section>
 
     </div>
   </main>
-
-  <!-- Interactive RSVP Modal -->
-  <div class="rsvp-modal" id="rsvpModal" role="dialog" aria-modal="true" aria-labelledby="rsvpTitle">
-    <div class="rsvp-content">
-      <button class="rsvp-close" id="rsvpClose" aria-label="Close RSVP modal">&times;</button>
-      <div style="text-align:center; margin-bottom:16px;">
-        <h3 id="rsvpTitle" style="font-family:'Great Vibes',cursive; font-size:2.8rem; color:var(--color-gold-dark);">Send Your RSVP</h3>
-        <p style="font-size:1rem; color:var(--color-text-muted);">We seek your warm presence and sacred blessings!</p>
-      </div>
-      <form id="rsvpForm">
-        <div class="form-group">
-          <label for="guestName">Your Full Name / Family Name *</label>
-          <input type="text" id="guestName" required placeholder="e.g. Rahul & Family" />
-        </div>
-        <div class="form-group">
-          <label for="attendanceStatus">Will you join us?</label>
-          <select id="attendanceStatus">
-            <option value="Joyfully Accepts">Joyfully Accepts (Will Attend)</option>
-            <option value="Regretfully Declines">Regretfully Declines</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="guestCount">Number of Guests</label>
-          <select id="guestCount">
-            <option value="1">1 Person</option>
-            <option value="2">2 Persons</option>
-            <option value="3">3 Persons</option>
-            <option value="4+">4+ Persons (Family)</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="guestWishes">Blessings for the Newlyweds & Families</label>
-          <textarea id="guestWishes" rows="3" placeholder="Write your heartfelt blessing..."></textarea>
-        </div>
-        <button type="submit" class="btn-submit-rsvp">Send Confirmation</button>
-      </form>
-    </div>
-  </div>
 
   <!-- Vinyl Record Floating Audio Widget -->
   <div class="audio-vinyl-widget" id="audioWidget" title="Toggle Music">
@@ -258,7 +196,6 @@
   <script src="./js/scratch-card.js"></script>
   <script src="./js/countdown.js"></script>
   <script src="./js/audio-player.js"></script>
-  <script src="./js/rsvp-modal.js"></script>
   <script src="./js/app.js"></script>
 </body>
 </html>

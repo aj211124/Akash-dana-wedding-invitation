@@ -8,22 +8,30 @@ document.addEventListener('DOMContentLoaded', () => {
   // 1. Meta & Title
   document.title = data.meta?.pageTitle || 'Wedding Invitation';
 
-  // 2. Populate Landing Scroll Header & Monogram
+  // 2. Populate Landing Scroll Header, Seal & Monogram
   const landingMonogram = document.getElementById('landingMonogram');
   const landingScript = document.getElementById('landingScript');
   const landingSub = document.getElementById('landingSub');
-  if (landingMonogram) landingMonogram.textContent = data.couple.monogram || 'A ✝ D';
+  const sealCouplesNames = document.getElementById('sealCouplesNames');
+  if (landingMonogram) landingMonogram.textContent = data.couple.monogram || 'AD';
   if (landingScript) landingScript.textContent = data.couple.landingTitle || 'Marriage Invitation';
   if (landingSub) landingSub.textContent = data.couple.landingSubtitle || 'Tap the golden cross seal to unroll the invitation';
+  if (sealCouplesNames) {
+    sealCouplesNames.innerHTML = `
+      <span class="seal-groom-name">${data.couple.groomName}</span>
+      <span class="seal-name-amp">&amp;</span>
+      <span class="seal-bride-name">${data.couple.brideName}</span>
+    `;
+  }
 
-  // 3. Hero Section (Clean Name Wrapping so "Dr." stays with Bride's Name!)
+  // 3. Hero Section (Clean 3-Line Layout: Groom, & in center, Bride)
   const heroCouplesNames = document.getElementById('heroCouplesNames');
   const heroTagline = document.getElementById('heroTagline');
   if (heroCouplesNames) {
     heroCouplesNames.innerHTML = `
-      <span class="name-part groom-part">${data.couple.groomName}</span>
+      <span class="groom-name-line">${data.couple.groomName}</span>
       <span class="name-amp">&amp;</span>
-      <span class="name-part bride-part">${data.couple.brideName}</span>
+      <span class="bride-name-line">${data.couple.brideName}</span>
     `;
   }
   if (heroTagline) heroTagline.textContent = data.couple.weddingTagline || '';
@@ -34,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (bibleVerseText) bibleVerseText.textContent = data.bibleVerse?.verse || '';
   if (bibleVerseRef) bibleVerseRef.textContent = data.bibleVerse?.reference || '';
 
-  // 5. Two Families Lineage Showcase (Kudumbam & Parish)
+  // 5. Two Families Lineage Showcase (Kudumbam & Professions)
   const lineageTitle = document.getElementById('lineageTitle');
   const lineageSubtitle = document.getElementById('lineageSubtitle');
   const groomSideContainer = document.getElementById('groomSideContainer');
@@ -50,9 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="royal-crest-icon">✝️</div>
         <div class="lineage-role">${g.role}</div>
         <h3 class="lineage-head">${g.headName}</h3>
+        ${g.profession ? `<div class="lineage-profession"><span class="prof-icon">🎓</span> ${g.profession}</div>` : ''}
         <p class="lineage-house">${g.lineage}</p>
-        <p class="lineage-parish">⛪ ${g.parish}</p>
-        <p class="lineage-blessing">"${g.blessing}"</p>
       </div>
     `;
   }
@@ -64,72 +71,68 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="royal-crest-icon">🕊️</div>
         <div class="lineage-role">${b.role}</div>
         <h3 class="lineage-head">${b.headName}</h3>
+        ${b.profession ? `<div class="lineage-profession"><span class="prof-icon">🎓</span> ${b.profession}</div>` : ''}
         <p class="lineage-house">${b.lineage}</p>
-        <p class="lineage-parish">⛪ ${b.parish}</p>
-        <p class="lineage-blessing">"${b.blessing}"</p>
       </div>
     `;
   }
 
-  // 6. Arranged Marriage Timeline
+  // 6. Arranged Marriage Timeline with Integrated Interactive Events
   const storyContainer = document.getElementById('storyContainer');
   if (storyContainer && Array.isArray(data.arrangedStory)) {
-    storyContainer.innerHTML = data.arrangedStory.map(item => `
-      <div class="story-item" data-tilt>
-        <div class="story-step-badge">Phase ${item.step}</div>
-        <h4 class="story-title">${item.title}</h4>
-        <div class="story-subtitle">${item.subtitle}</div>
-        <p class="story-desc">${item.description}</p>
-      </div>
-    `).join('');
-  }
-
-  // 7. Sacred Malankara Catholic Traditions & Rituals Guide
-  const traditionsContainer = document.getElementById('traditionsContainer');
-  if (traditionsContainer && Array.isArray(data.traditions)) {
-    traditionsContainer.innerHTML = data.traditions.map(t => `
-      <div class="tradition-card" data-tilt>
-        <div class="tradition-icon">${t.icon}</div>
-        <div class="tradition-content">
-          <h4 class="tradition-title">${t.title}</h4>
-          <p class="tradition-meaning">${t.meaning}</p>
+    storyContainer.innerHTML = data.arrangedStory.map((item, idx) => `
+      <div class="story-item ${idx === 0 ? 'active' : ''}" data-index="${idx}">
+        <div class="story-item-header">
+          <span class="story-step-badge">Phase ${item.step}</span>
+          <h4 class="story-title">${item.title}</h4>
+          <div class="story-subtitle">${item.subtitle}</div>
+          <p class="story-desc">${item.description}</p>
+          ${item.events && item.events.length ? `
+            <div class="story-toggle-hint">
+              <span>👇 Tap to view event timings & details</span>
+            </div>
+          ` : ''}
         </div>
+        ${item.events && item.events.length ? `
+          <div class="story-events-wrap">
+            ${item.events.map(evt => `
+              <div class="story-event-card">
+                <h5 class="story-event-name">${evt.eventTitle}</h5>
+                <div class="story-event-meta">
+                  <span>⏰ <strong>Time:</strong> ${evt.time}</span>
+                </div>
+                <div class="story-event-meta">
+                  <span>📍 <strong>Venue:</strong> ${evt.venue}</span>
+                </div>
+                ${evt.calendarUrl ? `
+                  <a class="btn-calendar" href="${evt.calendarUrl}" target="_blank" rel="noopener">
+                    📅 Add to Google Calendar
+                  </a>
+                ` : ''}
+              </div>
+            `).join('')}
+          </div>
+        ` : ''}
       </div>
     `).join('');
+
+    // Toggle expansion on tap/click
+    const storyItems = storyContainer.querySelectorAll('.story-item');
+    storyItems.forEach(item => {
+      item.addEventListener('click', (e) => {
+        if (e.target.closest('.btn-calendar')) return;
+        item.classList.toggle('active');
+      });
+    });
   }
 
-  // 8. Scratch Card & Countdown Text
+  // 7. Scratch Card & Countdown Text
   const scratchHeading = document.getElementById('scratchHeading');
   const scratchDisplayDate = document.getElementById('scratchDisplayDate');
   const countdownTitle = document.getElementById('countdownTitle');
   if (scratchHeading) scratchHeading.textContent = data.weddingDate.scratchHeading || 'Scratch brass plate to reveal Marriage date';
   if (scratchDisplayDate) scratchDisplayDate.textContent = data.weddingDate.displayDate || '';
   if (countdownTitle) countdownTitle.textContent = data.weddingDate.countdownTitle || 'Countdown to Holy Marriage';
-
-  // 9. Events Schedule Cards
-  const eventsContainer = document.getElementById('eventsContainer');
-  if (eventsContainer && Array.isArray(data.events)) {
-    eventsContainer.innerHTML = data.events.map(evt => `
-      <div class="event-card" data-tilt>
-        <div class="event-icon-badge">${evt.icon || '💍'}</div>
-        <h3 class="event-card-title">${evt.title}</h3>
-        <div class="event-meta-item">
-          <span>🗓️ <strong>Date:</strong> ${evt.date}</span>
-        </div>
-        <div class="event-meta-item">
-          <span>⏰ <strong>Time:</strong> ${evt.time}</span>
-        </div>
-        <div class="event-meta-item">
-          <span>📍 <strong>Venue:</strong> ${evt.venueName}, ${evt.location}</span>
-        </div>
-        ${evt.description ? `<p class="event-desc">${evt.description}</p>` : ''}
-        ${evt.googleCalendarLink ? `
-        <a class="btn-calendar" href="${evt.googleCalendarLink}" target="_blank" rel="noopener">
-          📅 Add to Google Calendar
-        </a>` : ''}
-      </div>
-    `).join('');
-  }
 
   // 10. Venues & Maps
   const venuesContainer = document.getElementById('venuesContainer');
@@ -161,7 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.DiyaEngine) window.DiyaEngine.init();
   if (window.TiltEngine) window.TiltEngine.init();
   if (window.WeddingAudio && data.audio?.enabled) window.WeddingAudio.init(data.audio.mp3Url);
-  if (window.WeddingRSVP) window.WeddingRSVP.init();
   if (window.ScratchCard) {
     window.ScratchCard.init(() => {
       if (window.WeddingCountdown && data.weddingDate?.isoDate) {

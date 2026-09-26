@@ -19,7 +19,7 @@ const WEDDING_DATA = {
   couple: {
     groomName: "Dr. Akash Daniel Georgi",
     brideName: "Dr. Dana Susan Abraham",
-    monogram: "A ✝ D",
+    monogram: "A & D",
     groomSubtitle: "Son of Dr. Georgi P Daniel & Seeniamma C Chennattucherry",
     brideSubtitle: "Daughter of Abraham John & Anulekha Philip",
     weddingTagline: "We cordially invite you to join us in celebrating our union",
@@ -38,59 +38,56 @@ const WEDDING_DATA = {
     title: "TWO FAMILIES, ONE SACRED UNION",
     subtitle: "With the love and blessings of our parents & family",
     groomSide: {
-      role: "Groom's Family & Parents",
+      role: "Groom's Parents",
       headName: "Dr. Georgi P Daniel & Seeniamma C Chennattucherry",
-      lineage: "Kollantethu Puthenpurackel, Prakkanam P O, Pathanamthitta - Pin 689643",
-      parish: "Sacred Heart Malankara Syrian Catholic Church, Mylapra",
-      blessing: "Welcoming our beloved daughter-in-law into our hearts and family."
+      profession: "Dr. Georgi P Daniel – Retired Professor, Mar Ivanios College, Thiruvananthapuram, and currently Principal, Mar Chrysostom College of Arts & Science, Adoor. | Seeniamma C Chennattucherry – Retired Professor, St. Thomas College, Kozhencherry.",
+      lineage: "Kollantethu Puthenpurackel, Prakkanam P O, Pathanamthitta - Pin 689643"
     },
     brideSide: {
-      role: "Bride's Family & Parents",
+      role: "Bride's Parents",
       headName: "Abraham John & Anulekha Philip",
-      lineage: "Pampalimannil PLRA 134, Panachamoodu Lane, Pattom P O, Thiruvananthapuram - 695004",
-      parish: "St. Mary's Major Archieparchial Cathedral, Pattom, Thiruvananthapuram",
-      blessing: "Entrusting our cherished daughter into a loving family of faith and noble virtues."
+      profession: "Abraham John - Retired Assistant Director, All India Radio | Anulekha Philip - Retired Principal, St. Mary's TTI Training School",
+      lineage: "Pampalimannil PLRA 134, Panachamoodu Lane, Pattom P O, Thiruvananthapuram - 695004"
     }
   },
 
-  // Arranged Marriage Journey Timeline
+  // Arranged Marriage Journey Timeline with Integrated Events & Calendar Links
   arrangedStory: [
     {
       step: "01",
-      title: "Pennu Kanal & Family Fellowship",
-      subtitle: "Bound in Faith & Grace",
-      description: "Our families met with shared faith, warmth, and prayer. With elder blessings and God's grace, two families chose a shared future."
+      title: "Betrothal Ceremony & Reception",
+      subtitle: "Sunday, 18th October 2026",
+      description: "Solemn Betrothal service at St. Mary's Major Archieparchial Cathedral Pattom, followed by celebratory Reception at Girideepam Convention Centre.",
+      icon: "✝️",
+      events: [
+        {
+          eventTitle: "Betrothal Service (Manasammatham)",
+          time: "12:00 Noon",
+          venue: "St. Mary's Major Archieparchial Cathedral Pattom, Thiruvananthapuram",
+          calendarUrl: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Dr.+Akash+%26+Dr.+Dana+Betrothal+Ceremony&dates=20261018T063000Z/20261018T073000Z&details=Betrothal+Ceremony+at+St.+Marys+Major+Archieparchial+Cathedral+Pattom&location=St.+Marys+Major+Archieparchial+Cathedral+Pattom+Thiruvananthapuram"
+        },
+        {
+          eventTitle: "Betrothal Reception",
+          time: "12:30 PM",
+          venue: "Girideepam Convention Centre, Nalanchira, Thiruvananthapuram",
+          calendarUrl: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Dr.+Akash+%26+Dr.+Dana+Betrothal+Reception&dates=20261018T070000Z/20261018T110000Z&details=Betrothal+Reception+at+Girideepam+Convention+Centre+Nalanchira+Thiruvananthapuram&location=Girideepam+Convention+Centre+Nalanchira+Thiruvananthapuram"
+        }
+      ]
     },
     {
       step: "02",
-      title: "Betrothal Ceremony (Manasammatham)",
-      subtitle: "Sunday, 18th October 2026 • 12.00 noon",
-      description: "Blessed at St. Mary's Major Archieparchial Cathedral Pattom, followed by Reception at Girideepam Convention Centre, Nalanchira, Thiruvananthapuram."
-    },
-    {
-      step: "03",
       title: "Marriage (Holy Matrimony)",
       subtitle: "Saturday, 26th December 2026",
-      description: "Taking our sacred vows, Crowning blessing, tying of the Minnu, and draping of the Manthrakodi at Sacred Heart Malankara Syrian Catholic Church Mylapra."
-    }
-  ],
-
-  // Sacred Malankara Catholic Wedding Rituals Guide
-  traditions: [
-    {
-      title: "Minnu Kettu (Tying of Sacred Minnu)",
-      icon: "✝️",
-      meaning: "The groom ties the Minnu (a golden pendant with 7 tiny beads forming a cross) around the bride's neck using 7 threads drawn from the Manthrakodi, symbolizing an unbreakable sacred bond under Christ."
-    },
-    {
-      title: "Manthrakodi (Wedding Sari Veil)",
-      icon: "🕊️",
-      meaning: "The groom drapes the blessed wedding veil sari (Manthrakodi) over the bride's head, representing his lifelong care, protection, and devotion."
-    },
-    {
-      title: "Service of Crowning & Blessing",
-      icon: "👑",
-      meaning: "In Malankara Syrian Catholic tradition, the solemn Marriage Service includes the crowning of the bride and groom, ring exchange, and pastoral nuptial blessings."
+      description: "Solemn Marriage Crowning Service, Minnu Kettu, and Manthrakodi draping.",
+      icon: "💍",
+      events: [
+        {
+          eventTitle: "Holy Marriage Crowning Service",
+          time: "11:00 AM",
+          venue: "Sacred Heart Malankara Syrian Catholic Church Mylapra, Pathanamthitta",
+          calendarUrl: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Dr.+Akash+%26+Dr.+Dana+Holy+Marriage&dates=20261226T053000Z/20261226T103000Z&details=Marriage+at+Sacred+Heart+Malankara+Syrian+Catholic+Church+Mylapra&location=Sacred+Heart+Malankara+Syrian+Catholic+Church+Mylapra"
+        }
+      ]
     }
   ],
 
@@ -108,40 +105,6 @@ const WEDDING_DATA = {
     mp3Url: "https://res.cloudinary.com/dlqmwmkdh/video/upload/v1786694954/T2_l8l115.mp3",
     autoplayOnEnvelopeClick: true
   },
-
-  // Event Schedule Cards (Exact dates & times from invitation card)
-  events: [
-    {
-      title: "Betrothal Ceremony (Manasammatham)",
-      date: "Sunday, 18 October 2026",
-      time: "12:00 Noon",
-      venueName: "St. Mary's Major Archieparchial Cathedral Pattom",
-      location: "Pattom, Thiruvananthapuram",
-      description: "Solemn Betrothal service blessed at St. Mary's Major Archieparchial Cathedral Pattom.",
-      icon: "✝️",
-      googleCalendarLink: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Dr.+Akash+%26+Dr.+Dana+Betrothal+Ceremony&dates=20261018T063000Z/20261018T073000Z&details=Betrothal+Ceremony+at+St.+Marys+Major+Archieparchial+Cathedral+Pattom&location=St.+Marys+Major+Archieparchial+Cathedral+Pattom+Thiruvananthapuram"
-    },
-    {
-      title: "Betrothal Reception",
-      date: "Sunday, 18 October 2026",
-      time: "12:30 PM",
-      venueName: "Girideepam Convention Centre",
-      location: "Nalanchira, Thiruvananthapuram",
-      description: "Celebratory afternoon reception feast and fellowship at Girideepam Convention Centre.",
-      icon: "🥂",
-      googleCalendarLink: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Dr.+Akash+%26+Dr.+Dana+Betrothal+Reception&dates=20261018T070000Z/20261018T110000Z&details=Betrothal+Reception+at+Girideepam+Convention+Centre+Nalanchira+Thiruvananthapuram&location=Girideepam+Convention+Centre+Nalanchira+Thiruvananthapuram"
-    },
-    {
-      title: "Marriage (Holy Matrimony)",
-      date: "Saturday, 26 December 2026",
-      time: "11:00 AM",
-      venueName: "Sacred Heart Malankara Syrian Catholic Church Mylapra",
-      location: "Mylapra, Pathanamthitta",
-      description: "Solemn Marriage Crowning Service, Minnu Kettu, and Manthrakodi draping.",
-      icon: "💍",
-      googleCalendarLink: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Dr.+Akash+%26+Dr.+Dana+Holy+Marriage&dates=20261226T053000Z/20261226T103000Z&details=Marriage+at+Sacred+Heart+Malankara+Syrian+Catholic+Church+Mylapra&location=Sacred+Heart+Malankara+Syrian+Catholic+Church+Mylapra"
-    }
-  ],
 
   // Venue Details & Embedded Google Maps (Exact venues from invitation card)
   venues: [

@@ -96,12 +96,13 @@ body.opened {
 }
 
 .landing-header .monogram {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3.2rem;
-  font-weight: 700;
+  font-family: 'Great Vibes', cursive, serif;
+  font-size: 3.8rem;
+  font-weight: 400;
   color: var(--color-gold-dark);
-  letter-spacing: 0.05em;
-  text-shadow: 0 2px 10px rgba(212, 175, 55, 0.25);
+  letter-spacing: 0.04em;
+  text-shadow: 0 2px 12px rgba(212, 175, 55, 0.35);
+  line-height: 1.1;
 }
 
 .landing-header .sub-header {
@@ -176,12 +177,12 @@ body.opened {
 
 .scroll-parchment-body.unrolled {
   height: 250px;
-  padding: 20px 16px;
+  padding: 16px;
 }
 
 .scroll-inner-border {
   border: 1.5px solid rgba(212, 175, 55, 0.4);
-  padding: 14px;
+  padding: 14px 10px;
   border-radius: 8px;
   width: 100%;
   height: 100%;
@@ -189,6 +190,43 @@ body.opened {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.seal-couples-names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.seal-groom-name,
+.seal-bride-name {
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-gold-dark);
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+}
+
+.seal-name-amp {
+  font-family: 'Great Vibes', cursive, serif;
+  font-size: 1.7rem;
+  font-style: italic;
+  color: var(--color-gold-dark);
+  line-height: 1;
+  margin: -2px 0;
+}
+
+.seal-invite-text {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  color: #685012;
+  margin-top: 6px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .ribbon-seal-btn {
@@ -340,25 +378,36 @@ body.opened {
   font-size: 1.85rem;
   font-weight: 700;
   color: var(--color-text-primary);
-  line-height: 1.35;
+  line-height: 1.25;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  text-align: center;
+  gap: 0;
+  width: 100%;
 }
 
-.hero-couples-names .name-part {
-  display: inline-block;
-  white-space: nowrap;
+.groom-name-line,
+.bride-name-line {
+  display: block;
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  word-break: keep-all;
 }
 
 .hero-couples-names .name-amp {
+  display: block;
   color: var(--color-gold-dark);
   font-style: italic;
-  font-family: 'Great Vibes', cursive;
-  font-size: 2.2rem;
-  margin: 0 4px;
+  font-family: 'Great Vibes', cursive, serif;
+  font-size: 2.3rem;
+  line-height: 1;
+  margin: -2px 0;
 }
 
 .hero-tagline {
@@ -457,34 +506,80 @@ body.opened {
 
 .royal-crest-icon { font-size: 1.6rem; margin-bottom: 4px; }
 .lineage-role { font-size: 0.82rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-gold-dark); font-weight: 700; }
-.lineage-head { font-family: 'Cormorant Garamond', 'Times New Roman', serif; font-size: 1.35rem; font-weight: 700; color: var(--color-text-primary); margin: 4px 0; }
-.lineage-house { font-size: 0.92rem; color: var(--color-text-muted); margin-bottom: 4px; line-height: 1.35; }
-.lineage-parish { font-size: 0.9rem; color: var(--color-gold-dark); margin-bottom: 4px; font-weight: 600; }
-.lineage-blessing { font-size: 0.88rem; color: var(--color-text-muted); font-style: italic; }
+.lineage-head { font-family: 'Cormorant Garamond', 'Times New Roman', serif; font-size: 1.35rem; font-weight: 700; color: var(--color-text-primary); margin: 4px 0 2px; }
+.lineage-profession { font-size: 0.86rem; color: #584414; font-weight: 600; margin: 6px 0; line-height: 1.4; background: rgba(212, 175, 55, 0.08); border-radius: 10px; padding: 8px 10px; border: 1px dashed var(--color-gold-border); }
+.lineage-profession .prof-icon { font-size: 1rem; }
+.lineage-house { font-size: 0.9rem; color: var(--color-text-muted); margin-top: 4px; line-height: 1.35; }
 
-/* Timeline Slide */
-.timeline-wrap { width: 100%; max-width: 380px; display: flex; flex-direction: column; gap: 12px; }
-.story-item { background: #ffffff; border: 1.5px solid var(--color-gold-border); border-radius: 18px; padding: 14px; box-shadow: var(--shadow-card); }
-.story-step-badge { display: inline-block; padding: 3px 10px; border-radius: 999px; background: linear-gradient(135deg, #d4af37, #b58d24); color: #ffffff; font-weight: 700; font-size: 0.75rem; margin-bottom: 4px; }
-.story-title { font-family: 'Cormorant Garamond', 'Times New Roman', serif; font-size: 1.3rem; font-weight: 700; color: var(--color-text-primary); }
-.story-subtitle { font-size: 0.88rem; color: var(--color-gold-dark); margin-bottom: 4px; font-weight: 600; }
-.story-desc { font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.4; }
-
-/* Malankara Catholic Traditions Guide Slide */
-.tradition-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
+/* Timeline Slide & Interactive Event Cards */
+.timeline-wrap { width: 100%; max-width: 380px; display: flex; flex-direction: column; gap: 14px; }
+.story-item {
   background: #ffffff;
   border: 1.5px solid var(--color-gold-border);
-  border-radius: 18px;
-  padding: 12px 14px;
-  margin-bottom: 10px;
-  max-width: 380px;
+  border-radius: 20px;
+  padding: 16px;
   box-shadow: var(--shadow-card);
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.story-item:hover { border-color: var(--color-gold); }
+.story-step-badge { display: inline-block; padding: 3px 10px; border-radius: 999px; background: linear-gradient(135deg, #d4af37, #b58d24); color: #ffffff; font-weight: 700; font-size: 0.75rem; margin-bottom: 6px; }
+.story-title { font-family: 'Cormorant Garamond', 'Times New Roman', serif; font-size: 1.4rem; font-weight: 700; color: var(--color-text-primary); line-height: 1.25; }
+.story-subtitle { font-size: 0.9rem; color: var(--color-gold-dark); margin: 2px 0 6px; font-weight: 600; }
+.story-desc { font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.4; }
+
+.story-toggle-hint {
+  font-size: 0.76rem;
+  letter-spacing: 0.05em;
+  color: var(--color-gold-dark);
+  font-weight: 700;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
-.tradition-icon { font-size: 1.8rem; flex: 0 0 auto; }
+.story-events-wrap {
+  display: none;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--color-gold-border);
+  animation: slide-down 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.story-item.active .story-events-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.story-event-card {
+  background: radial-gradient(circle at top, #ffffff 0%, #fcfaf5 100%);
+  border: 1px solid var(--color-gold-border);
+  border-radius: 14px;
+  padding: 12px;
+  text-align: left;
+}
+
+.story-event-name {
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-gold-dark);
+  margin-bottom: 4px;
+}
+
+.story-event-meta {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  margin-bottom: 3px;
+  line-height: 1.35;
+}
 .tradition-title { font-family: 'Cormorant Garamond', 'Times New Roman', serif; font-size: 1.25rem; font-weight: 700; color: var(--color-gold-dark); margin-bottom: 2px; }
 .tradition-meaning { font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.38; }
 

@@ -46,7 +46,7 @@ const WEDDING_DATA = {
     brideSide: {
       role: "Bride's Parents",
       headName: "Abraham John & Anulekha Philip",
-      profession: "Abraham John - Retired Assistant Director, All India Radio | Anulekha Philip - Retired Principal, St. Mary's TTI Training School",
+      profession: "Abraham John - Retired Assistant Director, All India Radio | Anulekha Philip - Retired Principal, St. Mary's Institute of Teacher Education",
       lineage: "Pampalimannil PLRA 134, Panachamoodu Lane, Pattom P O, Thiruvananthapuram - 695004"
     }
   },
@@ -131,15 +131,16 @@ const WEDDING_DATA = {
     }
   ],
 
-  // RSVP Modal & Contact Settings
+  // RSVP & Closing Invitation Settings
   rsvp: {
     enabled: true,
     contactNumber: "+91 8301971036",
     whatsappNumber: "918301971036",
-    joiningInvitation: "Ajay John Abraham",
+    joiningInvitation: "Sarath Jacob Georgi & Ajay John Abraham",
     tagline: "Your presence is the best present",
     closingTitle: "Joining the Invitation",
-    closingCouple: "Ajay John Abraham",
+    closingCouple: "Sarath Jacob Georgi & Ajay John Abraham",
+    closingCoupleHtml: `<span class="closing-name-line">Sarath Jacob Georgi</span><span class="closing-name-amp">&amp;</span><span class="closing-name-line">Ajay John Abraham</span>`,
     footerSignature: "An AJ Group Experience",
   }
 };

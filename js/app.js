@@ -157,7 +157,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const closingLine2 = document.getElementById('closingLine2');
   const closingContact = document.getElementById('closingContact');
   if (closingLine1) closingLine1.textContent = data.rsvp?.closingTitle || 'Joining the Invitation';
-  if (closingLine2) closingLine2.textContent = data.rsvp?.closingCouple || 'Ajay John Abraham';
+  if (closingLine2) {
+    if (data.rsvp?.closingCoupleHtml) {
+      closingLine2.innerHTML = data.rsvp.closingCoupleHtml;
+    } else {
+      closingLine2.textContent = data.rsvp?.closingCouple || 'Sarath Jacob Georgi & Ajay John Abraham';
+    }
+  }
   if (closingContact) closingContact.textContent = data.rsvp?.contactNumber || '';
 
   // Initialize Engines
